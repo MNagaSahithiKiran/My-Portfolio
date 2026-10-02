@@ -55,13 +55,26 @@ const Navbar = ({ isDark, setIsDark, activeSection }) => {
             href="#hero" 
             className="flex items-center gap-3 group focus:outline-none"
           >
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pink-600 via-pink-500 to-pink-300 p-0.5 shadow-lg shadow-pink-500/20 group-hover:scale-105 transition-transform duration-300">
-              <div className="w-full h-full bg-white dark:bg-gray-900 rounded-[14px] flex items-center justify-center">
-                <span className="font-extrabold text-base bg-gradient-to-r from-pink-600 to-pink-400 bg-clip-text text-transparent">
-                  SK
-                </span>
+            <div className="flex items-center gap-2">
+              {/* Profile Avatar Thumbnail */}
+              <div className="w-10 h-10 rounded-full p-0.5 bg-gradient-to-tr from-pink-600 via-pink-400 to-pink-300 shadow-md group-hover:scale-105 transition-transform duration-300 shrink-0">
+                <img
+                  src={personalInfo.profileImage}
+                  alt={personalInfo.fullName}
+                  className="w-full h-full object-cover object-top rounded-full border border-white dark:border-gray-900 shadow-inner"
+                />
+              </div>
+
+              {/* SK Monogram Pill Badge */}
+              <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-pink-600 via-pink-500 to-pink-300 p-0.5 shadow-lg shadow-pink-500/20 group-hover:scale-105 transition-transform duration-300 shrink-0">
+                <div className="w-full h-full bg-white dark:bg-gray-900 rounded-[14px] flex items-center justify-center">
+                  <span className="font-extrabold text-base bg-gradient-to-r from-pink-600 to-pink-400 bg-clip-text text-transparent">
+                    SK
+                  </span>
+                </div>
               </div>
             </div>
+
             <div className="flex flex-col text-left">
               <span className="font-bold text-base tracking-tight text-gray-900 dark:text-white group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">
                 {personalInfo.shortName}
