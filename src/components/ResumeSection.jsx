@@ -18,7 +18,7 @@ const ResumeSection = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
             
-            <div className="lg:col-span-8 space-y-4">
+            <div className="lg:col-span-7 space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider border border-white/30">
                 <FileText className="w-3.5 h-3.5" />
                 <span>Curriculum Vitae</span>
@@ -29,7 +29,7 @@ const ResumeSection = () => {
               </h2>
 
               <p className="text-sm sm:text-base text-pink-100 max-w-2xl leading-relaxed">
-                Explore my academic background, technical skills, certifications, projects, internship experience at SkillNexis, and professional learning journey.
+                Explore my verified academic background, technical skills, certifications, projects, internship experience at SkillNexis, QSkill, SkillCraft, and Cisco, and professional learning journey.
               </p>
 
               <div className="flex flex-wrap items-center gap-4 pt-4">
@@ -38,44 +38,47 @@ const ResumeSection = () => {
                   className="px-6 py-3.5 rounded-full bg-white text-pink-700 font-extrabold text-xs sm:text-sm hover:bg-pink-50 shadow-lg hover:scale-105 transition-all duration-200 flex items-center gap-2"
                 >
                   <Eye className="w-4 h-4 text-pink-600" />
-                  <span>View Interactive Resume</span>
+                  <span>View Official Resume</span>
                 </button>
 
                 <a
-                  href={personalInfo.profileImage}
-                  download="Meesaragandla_Naga_Sahithi_Kiran_Resume.jpg"
+                  href={personalInfo.resumePdf}
+                  download="Meesaragandla_Naga_Sahithi_Kiran_Resume.pdf"
                   className="px-6 py-3.5 rounded-full bg-pink-900/40 backdrop-blur-md border border-white/40 text-white font-bold text-xs sm:text-sm hover:bg-white/20 transition-all duration-200 flex items-center gap-2"
                 >
                   <Download className="w-4 h-4" />
-                  <span>Download Profile Resume</span>
+                  <span>Download Resume (PDF)</span>
                 </a>
               </div>
 
             </div>
 
-            {/* Quick Preview Thumbnail */}
-            <div className="lg:col-span-4 flex justify-center">
+            {/* Resume Document Card Thumbnail */}
+            <div className="lg:col-span-5 flex justify-center">
               <div 
                 onClick={() => setShowPreview(true)}
-                className="w-56 h-72 rounded-2xl bg-white text-gray-900 p-4 shadow-2xl border-4 border-white/50 cursor-pointer hover:rotate-2 hover:scale-105 transition-all duration-300 relative group overflow-hidden"
+                className="w-64 sm:w-72 rounded-2xl bg-white shadow-2xl border-4 border-white/60 cursor-pointer hover:rotate-1 hover:scale-105 transition-all duration-300 relative group overflow-hidden"
               >
-                <div className="text-[10px] font-bold text-pink-600 uppercase border-b pb-1 mb-2">
-                  RESUME PREVIEW
-                </div>
-                <div className="text-xs font-extrabold">{personalInfo.fullName}</div>
-                <div className="text-[9px] text-gray-500 mb-3">{personalInfo.tagline}</div>
-                
-                <div className="space-y-2 text-[8px] text-gray-600">
-                  <div className="h-1.5 bg-pink-100 rounded w-3/4" />
-                  <div className="h-1.5 bg-gray-200 rounded w-full" />
-                  <div className="h-1.5 bg-gray-200 rounded w-5/6" />
-                  <div className="h-1.5 bg-pink-100 rounded w-2/3" />
-                  <div className="h-1.5 bg-gray-200 rounded w-full" />
-                  <div className="h-1.5 bg-gray-200 rounded w-4/5" />
+                <div className="p-2 bg-gray-50 border-b border-gray-200 flex items-center justify-between text-[11px] font-bold text-pink-700">
+                  <span className="flex items-center gap-1.5">
+                    <FileText className="w-3.5 h-3.5 text-pink-600" />
+                    <span>Official Resume</span>
+                  </span>
+                  <span className="text-[10px] bg-pink-100 text-pink-700 px-2 py-0.5 rounded-full font-bold">PDF</span>
                 </div>
 
-                <div className="absolute inset-0 bg-pink-600/80 text-white flex items-center justify-center font-bold text-xs opacity-0 group-hover:opacity-100 transition-opacity">
-                  Click to View Full
+                <div className="relative overflow-hidden bg-white">
+                  <img
+                    src={personalInfo.resumePages[0]}
+                    alt="Resume Preview Page 1"
+                    className="w-full h-auto object-cover object-top max-h-84 opacity-95 group-hover:opacity-100 transition-opacity"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-pink-900/80 via-transparent to-transparent flex items-end justify-center pb-4 opacity-90 group-hover:opacity-100 transition-opacity">
+                    <span className="px-4 py-2 rounded-full bg-white text-pink-700 font-extrabold text-xs shadow-lg flex items-center gap-2 group-hover:scale-105 transition-transform">
+                      <Eye className="w-3.5 h-3.5" />
+                      <span>Click to View Full Document</span>
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -86,78 +89,68 @@ const ResumeSection = () => {
 
       </div>
 
-      {/* Interactive Modal Drawer */}
+      {/* Full Document Viewer Modal */}
       {showPreview && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md animate-fade-in">
-          <div className="bg-white dark:bg-gray-900 rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 border border-pink-200 dark:border-pink-900 shadow-2xl relative text-left">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/80 backdrop-blur-md overflow-y-auto">
+          <div className="bg-white dark:bg-gray-950 max-w-4xl w-full p-4 sm:p-6 rounded-3xl border-2 border-pink-300 dark:border-pink-900 shadow-2xl relative my-6 text-left animate-in fade-in zoom-in duration-200">
             
-            <button
-              onClick={() => setShowPreview(false)}
-              className="absolute top-4 right-4 p-2 rounded-full text-gray-400 hover:text-gray-700 dark:hover:text-white hover:bg-pink-50 dark:hover:bg-gray-800 transition-colors"
-            >
-              <X className="w-6 h-6" />
-            </button>
+            {/* Modal Header */}
+            <div className="flex items-center justify-between pb-4 mb-4 border-b border-gray-200 dark:border-gray-800">
+              <div className="space-y-1">
+                <span className="text-xs font-extrabold text-pink-600 dark:text-pink-400 uppercase tracking-wider block">
+                  Official Document Viewer
+                </span>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-gray-900 dark:text-white">
+                  {personalInfo.fullName} — Resume
+                </h3>
+              </div>
 
-            <div className="border-b border-pink-100 dark:border-gray-800 pb-4 mb-6">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                {personalInfo.fullName}
-              </h3>
-              <p className="text-xs font-semibold text-pink-600 dark:text-pink-400">
-                {personalInfo.tagline}
-              </p>
+              <div className="flex items-center gap-3">
+                <a
+                  href={personalInfo.resumePdf}
+                  download="Meesaragandla_Naga_Sahithi_Kiran_Resume.pdf"
+                  className="px-4 py-2 rounded-xl bg-pink-100 dark:bg-pink-950 text-pink-700 dark:text-pink-300 text-xs font-bold hover:bg-pink-200 flex items-center gap-1.5 transition-colors"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span className="hidden sm:inline">Download</span>
+                </a>
+                <button
+                  onClick={() => setShowPreview(false)}
+                  className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
             </div>
 
-            <div className="space-y-6 text-sm text-gray-700 dark:text-gray-300">
-              
-              <div>
-                <h4 className="font-bold text-gray-900 dark:text-white text-base mb-2 border-b border-pink-200 dark:border-pink-900 pb-1">
-                  Education
-                </h4>
-                <div className="font-semibold">{personalInfo.degree} - {personalInfo.department}</div>
-                <div className="text-xs text-pink-600 font-medium">{personalInfo.institution} ({personalInfo.yearRange})</div>
-              </div>
-
-              <div>
-                <h4 className="font-bold text-gray-900 dark:text-white text-base mb-2 border-b border-pink-200 dark:border-pink-900 pb-1">
-                  Internship Experience
-                </h4>
-                <div className="font-semibold">Python Developer Intern @ SkillNexis</div>
-                <div className="text-xs text-gray-500">August 19, 2026 – September 30, 2026</div>
-              </div>
-
-              <div>
-                <h4 className="font-bold text-gray-900 dark:text-white text-base mb-2 border-b border-pink-200 dark:border-pink-900 pb-1">
-                  Core Skills
-                </h4>
-                <div className="flex flex-wrap gap-1.5">
-                  {['Python', 'Java', 'C', 'JavaScript', 'AI/ML', 'MongoDB', 'RAG', 'Vector Search', 'Azure', 'Computer Vision'].map((s, idx) => (
-                    <span key={idx} className="px-2.5 py-1 bg-pink-50 dark:bg-gray-800 rounded-lg text-xs font-medium text-pink-700 dark:text-pink-300">
-                      {s}
-                    </span>
-                  ))}
+            {/* Multi-Page Resume Display */}
+            <div className="space-y-6 max-h-[75vh] overflow-y-auto pr-2 rounded-2xl">
+              {personalInfo.resumePages.map((pageSrc, idx) => (
+                <div key={idx} className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 dark:border-gray-800 bg-white">
+                  <div className="px-4 py-2 bg-gray-100 dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 text-xs font-bold text-gray-600 dark:text-gray-400 flex items-center justify-between">
+                    <span>Page {idx + 1} of {personalInfo.resumePages.length}</span>
+                    <span className="text-pink-600 dark:text-pink-400 font-mono text-[11px]">Meesaragandla Naga Sahithi Kiran</span>
+                  </div>
+                  <img
+                    src={pageSrc}
+                    alt={`Resume Page ${idx + 1}`}
+                    className="w-full h-auto object-contain"
+                  />
                 </div>
-              </div>
-
-              <div>
-                <h4 className="font-bold text-gray-900 dark:text-white text-base mb-2 border-b border-pink-200 dark:border-pink-900 pb-1">
-                  Certifications & Learning
-                </h4>
-                <ul className="list-disc list-inside space-y-1 text-xs text-gray-600 dark:text-gray-300">
-                  <li>AI Data Strategy with MongoDB (ID: MDBu21699ew99)</li>
-                  <li>Build a Free Website with WordPress (Coursera ID: T0GGXEB3DTM6)</li>
-                  <li>Azure Cognitive Services Computer Vision (Microsoft)</li>
-                  <li>Deep-Tech Entrepreneurship Foundations (Qualcomm - 100% Score)</li>
-                </ul>
-              </div>
-
+              ))}
             </div>
 
-            <div className="mt-8 pt-4 border-t border-pink-100 dark:border-gray-800 flex justify-end gap-3">
+            {/* Modal Footer */}
+            <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+              <span className="text-gray-500 dark:text-gray-400 font-medium">
+                Official Curriculum Vitae (B.Tech CSE, 2023–2027)
+              </span>
+
               <button
                 onClick={() => setShowPreview(false)}
-                className="px-5 py-2.5 rounded-full bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 font-semibold text-xs hover:bg-gray-300 transition-colors"
+                className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-pink-600 to-pink-500 text-white font-extrabold shadow-md hover:from-pink-700 hover:to-pink-600 transition-all"
               >
-                Close
+                Close Preview
               </button>
             </div>
 
@@ -170,3 +163,4 @@ const ResumeSection = () => {
 };
 
 export default ResumeSection;
+

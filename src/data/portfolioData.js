@@ -31,8 +31,13 @@ export const personalInfo = {
   githubUrl: "https://github.com/MNagaSahithiKiran",
   linkedinUrl: "https://www.linkedin.com/in/naga-sahithi-kiran-meesaragandla",
   profileImage: `${cleanBase}profile.jpg`,
-
+  resumePdf: `${cleanBase}resume.pdf`,
+  resumePages: [
+    `${cleanBase}resume_page_1.png`,
+    `${cleanBase}resume_page_2.png`
+  ],
 };
+
 
 export const aboutHighlights = [
   {
