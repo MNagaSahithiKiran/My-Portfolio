@@ -42,7 +42,7 @@ const ResumeSection = () => {
                 </button>
 
                 <a
-                  href="/profile.jpg"
+                  href={personalInfo.profileImage}
                   download="Meesaragandla_Naga_Sahithi_Kiran_Resume.jpg"
                   className="px-6 py-3.5 rounded-full bg-pink-900/40 backdrop-blur-md border border-white/40 text-white font-bold text-xs sm:text-sm hover:bg-white/20 transition-all duration-200 flex items-center gap-2"
                 >
@@ -50,6 +50,7 @@ const ResumeSection = () => {
                   <span>Download Profile Resume</span>
                 </a>
               </div>
+
             </div>
 
             {/* Quick Preview Thumbnail */}

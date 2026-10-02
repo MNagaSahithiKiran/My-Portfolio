@@ -1,3 +1,6 @@
+const base = import.meta.env.BASE_URL || '/';
+const cleanBase = base.endsWith('/') ? base : `${base}/`;
+
 export const personalInfo = {
   fullName: "Meesaragandla Naga Sahithi Kiran",
   shortName: "Sahithi Kiran",
@@ -24,10 +27,11 @@ export const personalInfo = {
   institution: "Vel Tech Rangarajan Dr. Sagunthala R & D Institute of Science & Technology",
   degree: "Bachelor of Technology (B.Tech)",
   department: "Computer Science and Engineering",
-  yearRange: "2023 – 2027",
+  yearRange: "2023 - 2027",
   githubUrl: "https://github.com/MNagaSahithiKiran",
   linkedinUrl: "https://www.linkedin.com/in/naga-sahithi-kiran-meesaragandla",
-  profileImage: "/profile.jpg",
+  profileImage: `${cleanBase}profile.jpg`,
+
 };
 
 export const aboutHighlights = [
@@ -434,7 +438,7 @@ export const certifications = [
   // --- CISCO NETWORKING ACADEMY (13 CERTIFICATES) ---
   {
     id: "cert-cisco-ccna-ensa",
-    imageUrl: "/certificates/cisco-ccna-enterprise-networking.png",
+    imageUrl: `${cleanBase}certificates/cisco-ccna-enterprise-networking.png`,
     title: "CCNA: Enterprise Networking, Security, and Automation",
     organization: "Cisco Networking Academy / VelTech",
     issued: "September 21, 2026",
@@ -446,7 +450,7 @@ export const certifications = [
   },
   {
     id: "cert-cisco-ccna-srwe",
-    imageUrl: "/certificates/cisco-ccna-switching-routing.png",
+    imageUrl: `${cleanBase}certificates/cisco-ccna-switching-routing.png`,
     title: "CCNA: Switching, Routing, and Wireless Essentials",
     organization: "Cisco Networking Academy / VelTech",
     issued: "September 20, 2026",
@@ -458,7 +462,7 @@ export const certifications = [
   },
   {
     id: "cert-cisco-ccna",
-    imageUrl: "/certificates/page_13.png",
+    imageUrl: `${cleanBase}certificates/page_13.png`,
     title: "CCNA: Introduction to Networks",
     organization: "Cisco Networking Academy / VelTech",
     issued: "August 5, 2026",
@@ -470,7 +474,7 @@ export const certifications = [
   },
   {
     id: "cert-cisco-ethical-hacker",
-    imageUrl: "/certificates/page_4.png",
+    imageUrl: `${cleanBase}certificates/page_4.png`,
     title: "Ethical Hacker",
     organization: "Cisco Networking Academy / VelTech",
     issued: "July 30, 2026",
@@ -482,7 +486,7 @@ export const certifications = [
   },
   {
     id: "cert-cisco-ap-cyber",
-    imageUrl: "/certificates/page_1.png",
+    imageUrl: `${cleanBase}certificates/page_1.png`,
     title: "AP Cybersecurity",
     organization: "Cisco Networking Academy / VelTech",
     issued: "August 13, 2026",
@@ -494,7 +498,7 @@ export const certifications = [
   },
   {
     id: "cert-cisco-cyber-essentials",
-    imageUrl: "/certificates/page_3.png",
+    imageUrl: `${cleanBase}certificates/page_3.png`,
     title: "Cybersecurity Essentials",
     organization: "Cisco Networking Academy / VelTech",
     issued: "August 28, 2026",
@@ -506,7 +510,7 @@ export const certifications = [
   },
   {
     id: "cert-cisco-industrial-cyber",
-    imageUrl: "/certificates/page_7.png",
+    imageUrl: `${cleanBase}certificates/page_7.png`,
     title: "Industrial Cybersecurity Essentials",
     organization: "Cisco Networking Academy / VelTech",
     issued: "August 12, 2026",
@@ -518,7 +522,7 @@ export const certifications = [
   },
   {
     id: "cert-cisco-intro-cyber",
-    imageUrl: "/certificates/page_8.png",
+    imageUrl: `${cleanBase}certificates/page_8.png`,
     title: "Introduction to Cybersecurity",
     organization: "Cisco Networking Academy / VelTech",
     issued: "July 7, 2026",
@@ -530,7 +534,7 @@ export const certifications = [
   },
   {
     id: "cert-cisco-python-1",
-    imageUrl: "/certificates/page_11.png",
+    imageUrl: `${cleanBase}certificates/page_11.png`,
     title: "Python Essentials 1",
     organization: "Cisco / OpenEDG Python Institute",
     issued: "July 8, 2026",
@@ -542,7 +546,7 @@ export const certifications = [
   },
   {
     id: "cert-cisco-python-2",
-    imageUrl: "/certificates/page_14.png",
+    imageUrl: `${cleanBase}certificates/page_14.png`,
     title: "Python Essentials 2",
     organization: "Cisco / OpenEDG Python Institute",
     issued: "July 8, 2026",
@@ -554,7 +558,7 @@ export const certifications = [
   },
   {
     id: "cert-cisco-apply-ai",
-    imageUrl: "/certificates/page_2.png",
+    imageUrl: `${cleanBase}certificates/page_2.png`,
     title: "Apply AI: Analyze Customer Reviews",
     organization: "Cisco Networking Academy / VelTech",
     issued: "July 8, 2026",
@@ -566,7 +570,7 @@ export const certifications = [
   },
   {
     id: "cert-cisco-intro-ds",
-    imageUrl: "/certificates/page_9.png",
+    imageUrl: `${cleanBase}certificates/page_9.png`,
     title: "Introduction to Data Science",
     organization: "Cisco Networking Academy / VelTech",
     issued: "July 8, 2026",
@@ -578,7 +582,7 @@ export const certifications = [
   },
   {
     id: "cert-cisco-modern-ai",
-    imageUrl: "/certificates/page_10.png",
+    imageUrl: `${cleanBase}certificates/page_10.png`,
     title: "Introduction to Modern AI",
     organization: "Cisco Networking Academy / VelTech",
     issued: "July 7, 2026",
@@ -590,7 +594,7 @@ export const certifications = [
   },
   {
     id: "cert-cisco-packet-tracer-exploring",
-    imageUrl: "/certificates/page_5.png",
+    imageUrl: `${cleanBase}certificates/page_5.png`,
     title: "Exploring Networking with Cisco Packet Tracer",
     organization: "Cisco Networking Academy / VelTech",
     issued: "August 5, 2026",
@@ -602,7 +606,7 @@ export const certifications = [
   },
   {
     id: "cert-cisco-packet-tracer-getting-started",
-    imageUrl: "/certificates/page_6.png",
+    imageUrl: `${cleanBase}certificates/page_6.png`,
     title: "Getting Started with Cisco Packet Tracer",
     organization: "Cisco Networking Academy / VelTech",
     issued: "August 5, 2026",
@@ -616,7 +620,7 @@ export const certifications = [
   // --- MONGODB (5 CERTIFICATES) ---
   {
     id: "cert-mongodb-ai-data",
-    imageUrl: "/certificates/page_42.png",
+    imageUrl: `${cleanBase}certificates/page_42.png`,
     title: "AI Data Strategy with MongoDB",
     organization: "MongoDB",
     issued: "August 14, 2026",
@@ -628,7 +632,7 @@ export const certifications = [
   },
   {
     id: "cert-mongodb-vector-search",
-    imageUrl: "/certificates/page_43.png",
+    imageUrl: `${cleanBase}certificates/page_43.png`,
     title: "Vector Search Fundamentals",
     organization: "MongoDB",
     issued: "August 14, 2026",
@@ -640,7 +644,7 @@ export const certifications = [
   },
   {
     id: "cert-mongodb-ai-agents",
-    imageUrl: "/certificates/page_44.png",
+    imageUrl: `${cleanBase}certificates/page_44.png`,
     title: "AI Agents with MongoDB",
     organization: "MongoDB",
     issued: "August 14, 2026",
@@ -652,7 +656,7 @@ export const certifications = [
   },
   {
     id: "cert-mongodb-basics",
-    imageUrl: "/certificates/page_45.png",
+    imageUrl: `${cleanBase}certificates/page_45.png`,
     title: "MongoDB Basics for Students",
     organization: "MongoDB",
     issued: "July 10, 2026",
@@ -664,7 +668,7 @@ export const certifications = [
   },
   {
     id: "cert-mongodb-rag",
-    imageUrl: "/certificates/page_46.png",
+    imageUrl: `${cleanBase}certificates/page_46.png`,
     title: "RAG with MongoDB",
     organization: "MongoDB",
     issued: "August 14, 2026",
@@ -678,7 +682,7 @@ export const certifications = [
   // --- INFOSYS SPRINGBOARD (6 CERTIFICATES) ---
   {
     id: "cert-infosys-testing",
-    imageUrl: "/certificates/page_12.png",
+    imageUrl: `${cleanBase}certificates/page_12.png`,
     title: "Automated Testing & Deployment",
     organization: "Infosys Springboard",
     issued: "November 1, 2025",
@@ -690,7 +694,7 @@ export const certifications = [
   },
   {
     id: "cert-infosys-performance",
-    imageUrl: "/certificates/page_15.png",
+    imageUrl: `${cleanBase}certificates/page_15.png`,
     title: "Performance Engineering: Potential Performance Issues",
     organization: "Infosys Springboard",
     issued: "August 23, 2025",
@@ -702,7 +706,7 @@ export const certifications = [
   },
   {
     id: "cert-infosys-agile",
-    imageUrl: "/certificates/page_16.png",
+    imageUrl: `${cleanBase}certificates/page_16.png`,
     title: "Software Engineering and Agile Software Development",
     organization: "Infosys Springboard",
     issued: "October 27, 2025",
@@ -714,7 +718,7 @@ export const certifications = [
   },
   {
     id: "cert-infosys-meteor",
-    imageUrl: "/certificates/page_17.png",
+    imageUrl: `${cleanBase}certificates/page_17.png`,
     title: "Learning Meteor Application Development",
     organization: "Infosys Springboard",
     issued: "November 2, 2025",
@@ -726,7 +730,7 @@ export const certifications = [
   },
   {
     id: "cert-infosys-webapp",
-    imageUrl: "/certificates/page_18.png",
+    imageUrl: `${cleanBase}certificates/page_18.png`,
     title: "Web App Development Training",
     organization: "Infosys Springboard",
     issued: "November 2, 2025",
@@ -738,7 +742,7 @@ export const certifications = [
   },
   {
     id: "cert-infosys-php",
-    imageUrl: "/certificates/page_19.png",
+    imageUrl: `${cleanBase}certificates/page_19.png`,
     title: "Learning PHP 7",
     organization: "Infosys Springboard",
     issued: "November 2, 2025",
@@ -752,7 +756,7 @@ export const certifications = [
   // --- INTERNSHIPS & JOB SIMULATIONS (8 CERTIFICATES) ---
   {
     id: "cert-skillcraft-prompt",
-    imageUrl: "/certificates/page_24.png",
+    imageUrl: `${cleanBase}certificates/page_24.png`,
     title: "Prompt Engineering Internship Certificate",
     organization: "SkillCraft Technology",
     issued: "July 2, 2026",
@@ -764,7 +768,7 @@ export const certifications = [
   },
   {
     id: "cert-qskill-aiml",
-    imageUrl: "/certificates/page_40.png",
+    imageUrl: `${cleanBase}certificates/page_40.png`,
     title: "Virtual Internship in AI/ML",
     organization: "QSkill / SR INDIA",
     issued: "July 3, 2026",
@@ -776,7 +780,7 @@ export const certifications = [
   },
   {
     id: "cert-qskill-frontend",
-    imageUrl: "/certificates/page_41.png",
+    imageUrl: `${cleanBase}certificates/page_41.png`,
     title: "Virtual Internship in Front-End Development",
     organization: "QSkill / SR INDIA",
     issued: "July 3, 2026",
@@ -788,7 +792,7 @@ export const certifications = [
   },
   {
     id: "cert-deloitte-analytics",
-    imageUrl: "/certificates/page_33.png",
+    imageUrl: `${cleanBase}certificates/page_33.png`,
     title: "Data Analytics Job Simulation",
     organization: "Deloitte / Forage",
     issued: "August 29, 2026",
@@ -800,7 +804,7 @@ export const certifications = [
   },
   {
     id: "cert-tata-cyber",
-    imageUrl: "/certificates/page_36.png",
+    imageUrl: `${cleanBase}certificates/page_36.png`,
     title: "Cybersecurity Analyst Job Simulation",
     organization: "Tata / Forage",
     issued: "August 29, 2026",
@@ -812,7 +816,7 @@ export const certifications = [
   },
   {
     id: "cert-tata-genai",
-    imageUrl: "/certificates/page_37.png",
+    imageUrl: `${cleanBase}certificates/page_37.png`,
     title: "GenAI Powered Data Analytics Job Simulation",
     organization: "Tata / Forage",
     issued: "August 29, 2026",
@@ -824,7 +828,7 @@ export const certifications = [
   },
   {
     id: "cert-tata-esg",
-    imageUrl: "/certificates/page_47.png",
+    imageUrl: `${cleanBase}certificates/page_47.png`,
     title: "ESG Job Simulation",
     organization: "Tata / Forage",
     issued: "August 19, 2026",
@@ -836,7 +840,7 @@ export const certifications = [
   },
   {
     id: "cert-tata-data-vis",
-    imageUrl: "/certificates/page_49.png",
+    imageUrl: `${cleanBase}certificates/page_49.png`,
     title: "Data Visualisation: Empowering Business with Effective Insights",
     organization: "Tata / Forage",
     issued: "August 29, 2026",
@@ -850,7 +854,7 @@ export const certifications = [
   // --- CLOUD & ACCREDITED COURSES (5 CERTIFICATES) ---
   {
     id: "cert-coursera-wordpress",
-    imageUrl: "/certificates/page_30.png",
+    imageUrl: `${cleanBase}certificates/page_30.png`,
     title: "Build a Free Website with WordPress",
     organization: "Coursera",
     issued: "August 14, 2026",
@@ -862,7 +866,7 @@ export const certifications = [
   },
   {
     id: "cert-microsoft-azure-cv",
-    imageUrl: "/certificates/page_31.png",
+    imageUrl: `${cleanBase}certificates/page_31.png`,
     title: "Build a Computer Vision App with Azure Cognitive Services",
     organization: "Microsoft / Coursera",
     issued: "August 14, 2026",
@@ -874,7 +878,7 @@ export const certifications = [
   },
   {
     id: "cert-thingqbator-embedded",
-    imageUrl: "/certificates/page_48.png",
+    imageUrl: `${cleanBase}certificates/page_48.png`,
     title: "An Introduction to Embedded Systems",
     organization: "thingQbator / NASSCOM Foundation",
     issued: "2026",
@@ -886,7 +890,7 @@ export const certifications = [
   },
   {
     id: "cert-thingqbator-cad",
-    imageUrl: "/certificates/page_21.png",
+    imageUrl: `${cleanBase}certificates/page_21.png`,
     title: "CAD and 3D Printing",
     organization: "thingQbator / NASSCOM Foundation",
     issued: "2026",
@@ -898,7 +902,7 @@ export const certifications = [
   },
   {
     id: "cert-eclearnix-ai-writing",
-    imageUrl: "/certificates/page_38.png",
+    imageUrl: `${cleanBase}certificates/page_38.png`,
     title: "Hands-On AI Tools for Academic Writing (Masterclass)",
     organization: "ECLearnix EdTech",
     issued: "2026",
@@ -912,7 +916,7 @@ export const certifications = [
   // --- INNOVATION & WEBINARS (7 CERTIFICATES) ---
   {
     id: "cert-qualcomm-deeptech",
-    imageUrl: "/certificates/page_23.png",
+    imageUrl: `${cleanBase}certificates/page_23.png`,
     title: "Entrepreneurship Foundations for Deep Tech Startups (100% Score)",
     organization: "L2Pro India / Turnip Innovations / Qualcomm",
     issued: "August 14, 2026",
@@ -924,7 +928,7 @@ export const certifications = [
   },
   {
     id: "cert-veltech-business-model",
-    imageUrl: "/certificates/page_20.png",
+    imageUrl: `${cleanBase}certificates/page_20.png`,
     title: "Building a Scalable Business Model",
     organization: "Vel Tech TBI & Institution's Innovation Council",
     issued: "July 31, 2025",
@@ -936,7 +940,7 @@ export const certifications = [
   },
   {
     id: "cert-veltech-design-thinking",
-    imageUrl: "/certificates/page_35.png",
+    imageUrl: `${cleanBase}certificates/page_35.png`,
     title: "From Idea to Product: A Design Thinking Approach",
     organization: "Vel Tech TBI & Institution's Innovation Council",
     issued: "August 9, 2025",
@@ -948,7 +952,7 @@ export const certifications = [
   },
   {
     id: "cert-naukri-genquezt",
-    imageUrl: "/certificates/page_34.png",
+    imageUrl: `${cleanBase}certificates/page_34.png`,
     title: "GenQuezt: Independence Day Quiz",
     organization: "Naukri Campus / DoSelect",
     issued: "August 15, 2026",
@@ -960,7 +964,7 @@ export const certifications = [
   },
   {
     id: "cert-sveep-reels",
-    imageUrl: "/certificates/page_26.png",
+    imageUrl: `${cleanBase}certificates/page_26.png`,
     title: "SVEEP Electoral Awareness - Reels Creation ('Inducement free Voting')",
     organization: "Tiruvallur District Administration / Govt of India",
     issued: "March 26, 2026",
@@ -972,7 +976,7 @@ export const certifications = [
   },
   {
     id: "cert-sveep-memes",
-    imageUrl: "/certificates/page_27.png",
+    imageUrl: `${cleanBase}certificates/page_27.png`,
     title: "SVEEP Electoral Awareness - Memes Creation ('No Cash for Vote')",
     organization: "Tiruvallur District Administration / Govt of India",
     issued: "March 26, 2026",
@@ -984,7 +988,7 @@ export const certifications = [
   },
   {
     id: "cert-sveep-slogan",
-    imageUrl: "/certificates/page_28.png",
+    imageUrl: `${cleanBase}certificates/page_28.png`,
     title: "SVEEP Electoral Awareness - Slogan Writing ('Importance of Vote')",
     organization: "Tiruvallur District Administration / Govt of India",
     issued: "March 26, 2026",
@@ -1178,3 +1182,5 @@ export const statsData = [
   { label: "Technical Learning Modules", value: 20, suffix: "+", icon: "BookOpen" },
   { label: "Core CS & AI Technologies", value: 15, suffix: "+", icon: "Cpu" }
 ];
+
+
